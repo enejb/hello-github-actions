@@ -1,0 +1,7 @@
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: enejb/complex-submodule-repo
+          event-type: update-submodule-project
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "repo":"${{ github.repository }}"}'
